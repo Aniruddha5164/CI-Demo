@@ -1,0 +1,15 @@
+name: CI Text File Example
+
+on: [push, pull_request]
+
+jobs:
+  spell-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Run spell check on text file
+        uses: rojopolis/spellcheck-github-actions@0.35.0
+        with:
+          source_files: "sample.txt"
